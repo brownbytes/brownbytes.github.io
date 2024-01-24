@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Notes - Setting up TinyML on Arduino Nano 33 BLE Sense Lite</title>
+<title>Notes - Setting up Arduino Nano 33 BLE Sense Lite for Machine Learning</title>
 </head>
 
 <body>
@@ -37,7 +37,7 @@ Arduino Tiny Machine learning kit consists of :-
 
 	</ul>
 While all the libraries except Arduino_TensorFlowLite are part of Arduino IDE. <br>
-To install Arduino_TinyML download the package and place it in the folder where Arduino IDE is located.<br>
+To install Arduino_TensorFlowLite download the package and place it in the Arduino/libraries is located.<br>
 Instructions are <a href="https://github.com/tensorflow/tflite-micro-arduino-examples#how-to-install"> here </a>
 </p>
 
@@ -59,7 +59,7 @@ Check for the blinking orange LED <br>
 <h2> Test 2 - Test Camera </h2>
 <p> Select File > Examples > Harvard_TinyMLx > test_camera <br>
 <img src="images/test_Camera.ino.jpg" alt="Camera" style="width:250px;height:475px;"> <br>
-</p>
+
 Upload the sketch to the board <br>
 select serial monitor <br>
 <img src="images/serialmon.jpg" alt="Camera" style="width:650px;height:70px;"> <br>
@@ -72,7 +72,23 @@ Ensure, to point the camera properly. This will take few trials and errors. <br>
 A message reading 'Image data will be printed out in 3 seconds...' will be displayed on the monitor <br>
 Captured image will be displayed as a list of hexadecimal values. <br>
 <img src="images/camop.jpg" alt="Camera Output" style="width:650px;height:125px;"> <br>
+</p>
+<h2> Test 3 - Testing Arduino_TensorFlowLite </h2>
+<p>
 
+Pre-requisite : Arduino_TensorFlowLite library has been manually downloaded and placed in Arduino/libraries folder. <br>
+Select File > Examples > Arduino_TensorFlowLite > helloworld <br>
+<img src="images/tflhwsketch.jpg" alt="TensorFlowLite sketch" style="width:250px;height:475px;"> <br>
+If the board is not connected, reselect board and port <br>
+<img src="images/tflbp.jpg" alt="Select Board and Port" style="width:250px;height:175px;"> <br>
+Upload the sketch to the board <br>
+<img src="images/tflupload.jpg" alt="Upload TensorFlowLite Hello World " style="width:250px;height:175px;"> <br>
+Check for the orange LED to slow blink <br>
+<video width="320" height="240" autoplay>
+<source src = "images/tflhw.mp4" type="video/mp4">
+</video>
+
+</p>
 </p>
 
 </body>

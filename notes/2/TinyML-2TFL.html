@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Notes - Setting up TinyML on Arduino Nano 33 BLE Sense Lite</title>
+</head>
+
+<body>
+<h1>Configuring and testing Arduino BLE Sense </h1>
+
+<p>
+Arduino Tiny Machine learning kit consists of :-
+<ul>
+	<li> Arduino Nano 33 BLE Sense Lite</li>
+	<li> Tiny Machine Learning Shield</li>
+	<li> OV7675 Camera Module</li>
+</ul>
+
+<img src="images/TinyML_board.jpg" alt="Adruino Nano 33" style="width:250px;height:175px;">
+
+<h1> Arduino setup - Arduino IDE </h1>
+</p> Download and Arduino IDE 
+	<ul>
+		<a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing/">Arduino IDE</a>
+	</ul>
+	Select  'Arduino Nano 33 BLE' as 'Board' and USB port as 'Port' that Arduino is connected to. <br>
+	Since I am using USB modem to connect to MacBook, my port is displayed as a USB modem. <br>
+	<img src="images/selectbp.jpg" alt="Board and Port" style="width:250px;height:75px;">
+	<img src="images/boardport.jpg" alt="Board and Port selection" style="width:250px;height:175px;">
+</p>
+
+<p> Install libraries
+	<ul>
+		<li>Arduino_LSM9DS1 v1.1.1</li>
+		<li>Arduino_OV767X v0.0.2</li>
+		<li>Harvard_TinyML v1.2.3-A</li>
+		<li>Arduino_TensorFlowLite </li>
+
+	</ul>
+While all the libraries except Arduino_TensorFlowLite are part of Arduino IDE. <br>
+To install Arduino_TinyML download the package and place it in the folder where Arduino IDE is located.<br>
+Instructions are <a href="https://github.com/tensorflow/tflite-micro-arduino-examples#how-to-install"> here </a>
+</p>
+
+<h1> Test 1 - Blink </h1>
+
+<p> Select File > Examples > Basic > Blink <br>
+<img src="images/Blink.jpg" alt="Blink" style="width:250px;height:175px;"> <br>
+Upon selecting 'Blink' sketch, ensure board and port are selected <br>
+<img src="images/Blink sketch.jpg" alt="Blink test" style="width:250px;height:175px;">
+<img src="images/Portstatus.jpg" alt="Board and Connected port" style="width:250px;height:175px;">
+</p>
+Upload <br>
+<img src="images/blinkupload.jpg" alt="Upload the sketch" style="width:250px;height:175px;">
+Check for the blinking orange LED <br>
+<video width="320" height="240" autoplay>
+<source src = "images/blink.mp4" type="video/mp4">
+</video>
+
+<h2> Test 2 - Test Camera </h2>
+<p> Select File > Examples > Harvard_TinyMLx > test_camera <br>
+<img src="images/test_Camera.ino.jpg" alt="Camera" style="width:250px;height:475px;"> <br>
+</p>
+Upload the sketch to the board <br>
+select serial monitor <br>
+<img src="images/serialmon.jpg" alt="Camera" style="width:650px;height:70px;"> <br>
+To capture a single photo, type 'single' in the input prompt. Ensure the monitor is to send 'Carriage Return' <br>
+<img src="images/single.jpg" alt="Single" style="width:650px;height:125px;"> <br>
+A message 'Camera in single mode, type "capture" to initiate an image capture' is displayed on the monitor <br>
+Now, type 'capture' <br>
+<img src="images/capture.jpg" alt="Capture" style="width:650px;height:125px;"> <br>
+Ensure, to point the camera properly. This will take few trials and errors. <br>
+A message reading 'Image data will be printed out in 3 seconds...' will be displayed on the monitor <br>
+Captured image will be displayed as a list of hexadecimal values. <br>
+<img src="images/camop.jpg" alt="Camera Output" style="width:650px;height:125px;"> <br>
+
+<h3>
+
+</p>
+
+</body>
+</html>
